@@ -1,0 +1,67 @@
+{% extends "layouts/default.html" %}
+{% block title %}Welcome to Caveman2{% endblock %}
+{% block content %}
+
+<div id="main">
+  Welcome to <a href="http://8arrow.org/caveman/">Caveman2!!TEST</a>
+</div>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css">
+  <title>Sudoku CSP Solver</title>
+</head>
+<body>
+  <h1 class="center">Sudoku CSP Solver</h1>
+  {% for board in boards %}
+  <table class="center">
+    {% for row in board %}
+    <tr{% cycle "" "" " class=\"box-bottom\"" %}>
+      {% for cell in row %}
+      <td{% cycle "" "" " class=\"box-side\"" %}>
+        {% if cell %}
+        <span class="constraint">{{ cell|first }}</span> {%
+        else %}{% endif %}
+      </td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </table>
+  <hr>
+  {% endfor %}
+</body>
+</html>
+
+<style>
+  .center {
+      max-width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  table {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+  tr {
+    padding: 0;
+  }
+  td {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid gray;
+    text-align: center;
+    vertical-align: center;
+    font-size: 1.5em;
+  }
+  tr.box-bottom td {
+    border-bottom: 2px solid black;
+  }
+  td.box-side {
+    border-right: 2px solid black;
+  }
+</style>
+
+{% endblock %}

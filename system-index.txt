@@ -1,0 +1,4 @@
+sudoku/sudoku.asd
+hexapawn/hexapawn.asd
+sudoku/sudoku-test.asd
+hexapawn/hexapawn-test.asd
